@@ -60,7 +60,7 @@ Cloud Events SDK also provides a ready-made transport helpers that listen for HT
 For example, if you want to startup a Cloud Events HTTP helper:
 
 ```golang
-	cloudevents "github.com/cloudevents/sdk-go/v2"
+    cloudevents "github.com/cloudevents/sdk-go/v2"
     pscontext "github.com/cloudevents/sdk-go/protocol/pubsub/v2/context"
     
 func Receive(ctx context.Context, event cloudevents.Event) error {
@@ -140,11 +140,11 @@ gcloud run deploy cr-events --image gcr.io/$PROJECT_ID/run-events --allow-unauth
 ### 1. GCS AuditLogs -> Topic -> Push -> Cloud Run (Cloud Events HTTP Client)
 
 ```bash
-$ gcloud eventarc attributes types list
+$ gcloud beta eventarc attributes types list
 
-$ gcloud eventarc  attributes service-names list --type=google.cloud.audit.log.v1.written
+$ gcloud beta eventarc  attributes service-names list --type=google.cloud.audit.log.v1.written
 
-$ gcloud eventarc  attributes method-names list  --type=google.cloud.audit.log.v1.written --service-name=storage.googleapis.com
+$ gcloud beta eventarc  attributes method-names list  --type=google.cloud.audit.log.v1.written --service-name=storage.googleapis.com
 
 
 gsutil mb -l us-central1 gs://events-bucket-1-$PROJECT_ID
